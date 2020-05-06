@@ -33,7 +33,7 @@
                 "output": "assets"
               }
             ],
-            "styles": ["apps/tiny-app/src/styles.scss"],
+            "styles": ["libs/shared/styles/src/index.scss"],
             "scripts": []
           },
           "configurations": {
@@ -136,6 +136,18 @@
       "projectType": "library",
       "root": "libs/shared/assets",
       "sourceRoot": "libs/shared/assets/src",
+      "prefix": "workspace",
+      "architect": {},
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-styles": {
+      "projectType": "library",
+      "root": "libs/shared/styles",
+      "sourceRoot": "libs/shared/styles/src",
       "prefix": "workspace",
       "architect": {},
       "schematics": {
