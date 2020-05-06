@@ -22,8 +22,16 @@
             "tsConfig": "apps/tiny-app/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "apps/tiny-app/src/favicon.ico",
-              "apps/tiny-app/src/assets"
+              {
+                "glob": "favicon.ico",
+                "input": "libs/shared/assets/src",
+                "output": "./"
+              },
+              {
+                "glob": "**/*",
+                "input": "libs/shared/assets/src/assets",
+                "output": "assets"
+              }
             ],
             "styles": ["apps/tiny-app/src/styles.scss"],
             "scripts": []
@@ -121,6 +129,18 @@
             "tsConfig": ["apps/tiny-app-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/tiny-app-e2e/**"]
           }
+        }
+      }
+    },
+    "shared-assets": {
+      "projectType": "library",
+      "root": "libs/shared/assets",
+      "sourceRoot": "libs/shared/assets/src",
+      "prefix": "workspace",
+      "architect": {},
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
         }
       }
     }
